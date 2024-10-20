@@ -1,0 +1,614 @@
+/* Загальні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    display: flex;
+    align-items: center;
+}
+
+header li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+header nav {
+    flex-grow: 1;
+    text-align: right;
+}
+
+header a {
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+header #branding {
+    float: left;
+}
+
+header #branding h1 {
+    margin: 0;
+}
+
+header nav {
+    float: right;
+    margin-top: 10px;
+}
+
+header .highlight, header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+/* Стилі для футера */
+footer {
+    background: #35424a;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Стилі для сторінки "Моя бібліотека" */
+.library-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.add-book-btn {
+    background-color: #e8491d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.library-stats {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e8491d;
+}
+
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.book-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.book-card img {
+    width: 120px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.book-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.book-author {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.book-progress {
+    width: 100%;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: #4CAF50;
+}
+
+.create-shelf-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.virtual-shelves {
+    margin-bottom: 20px;
+}
+
+.shelf-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.shelf-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+    cursor: pointer;
+}
+
+/* Updated Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 30px;
+    border: none;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-sizing: border-box;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #35424a;
+    font-size: 24px;
+}
+
+#shelf-select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+}
+
+#book-selection {
+    max-height: 250px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+#book-selection label {
+    display: flex;
+    align-items: center;
+    padding: 8px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+#book-selection input[type="checkbox"] {
+    margin-right: 12px;
+    transform: scale(1.2);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    padding: 12px 24px;
+    margin-left: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#cancel-add-to-shelf {
+    background-color: #f44336;
+    color: white;
+}
+
+#confirm-add-to-shelf {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#cancel-add-to-shelf:hover,
+#confirm-add-to-shelf:hover {
+    opacity: 0.9;
+}
+
+/* Scrollbar Styles */
+#book-selection::-webkit-scrollbar {
+    width: 8px;
+}
+
+#book-selection::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#book-selection::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+#book-selection::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.no-items-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-style: italic;
+    color: #666;
+}
+
+.book-select-item {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+}
+
+.success-message {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.book-item, .shelf-item {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 10px;
+}
+
+.book-item h3, .shelf-item h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.book-item p, .shelf-item p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.add-book-btn,
+.create-shelf-btn,
+.add-to-shelf-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.add-book-btn:hover,
+.create-shelf-btn:hover,
+.add-to-shelf-btn:hover {
+    background-color: #45a049;
+}
+
+.create-shelf-btn {
+    background-color: #2196F3;
+}
+
+.create-shelf-btn:hover {
+    background-color: #1e87db;
+}
+
+.add-to-shelf-btn {
+    background-color: #ff9800;
+}
+
+.add-to-shelf-btn:hover {
+    background-color: #e68a00;
+}
+
+/* Додайте цей стиль, якщо ви хочете, щоб кнопки були в одному рядку */
+.library-header div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding-bottom: 20px;
+    }
+
+    header #branding,
+    header nav {
+        text-align: center;
+        width: 100%;
+    }
+
+    header nav {
+        margin-top: 10px;
+    }
+
+    header li {
+        padding: 5px;
+    }
+}
+
+.create-tag-btn, .apply-tags-btn {
+    background-color: #9c27b0;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.create-tag-btn:hover, .apply-tags-btn:hover {
+    background-color: #7b1fa2;
+}
+
+.book-tags {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+#tag-selection {
+    max-height: 200px;
+    overflow-y: auto;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+#tag-selection label {
+    display: flex;
+    align-items: center;
+    padding: 5px 0;
+    font-size: 14px;
+}
+
+#tag-selection input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+#literary-compass {
+    text-align: center;
+    padding: 20px;
+}
+
+#genre-tree {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.genre-branch {
+    margin: 10px;
+    padding: 10px 15px;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.genre-branch:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.genre-branch.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#book-recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recommended-book {
+    width: 150px;
+    margin: 15px;
+    padding: 10px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.recommended-book:hover {
+    transform: translateY(-5px);
+}
+
+.recommended-book img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.recommended-book h4 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.recommended-book p {
+    font-size: 12px;
+    color: #666;
+}
+
+#collection-comparison {
+    padding: 20px;
+}
+
+.collections-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.user-collection, .other-collection {
+    width: 45%;
+}
+
+#other-user-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#your-books, #other-books, #common-books-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#your-books li, #other-books li, #common-books-list li {
+    background-color: #f0f0f0;
+    margin-bottom: 5px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#comparison-stats {
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#common-books {
+    margin-top: 20px;
+}
+
+#common-books-list li {
+    background-color: #d4edda;
+}
+
+#search-form {
+    margin-bottom: 20px;
+}
+
+#search-form input[type="text"] {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+#search-form select {
+    padding: 10px;
+    font-size: 16px;
+}
+
+#search-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#search-form button:hover {
+    background-color: #45a049;
+}
+
+#search-results ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#search-results li {
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}

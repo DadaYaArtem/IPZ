@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук книг - Бібліотечний Всесвіт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Бібліотечний</span> Всесвіт</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li class="current"><a href="library.html">Моя бібліотека</a></li>
+                    <li><a href="compas.html">Літературний компас</a></li>
+                    <li><a href="compare.html">Порівняння колекцій </a></li>
+                    <li><a href="search.html">Пошук книг</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1>Пошук книг</h1>
+        <form id="search-form">
+            <div class="search-container">
+                <input type="text" id="search-query" placeholder="Введіть назву книги або автора">
+                <div id="autocomplete-results"></div>
+            </div>
+            <select id="search-type">
+                <option value="all">Всі поля</option>
+                <option value="title">За назвою</option>
+                <option value="author">За автором</option>
+            </select>
+            <button type="submit">Пошук</button>
+        </form>
+
+        <div id="search-results">
+            <!-- Результати пошуку будуть відображатися тут -->
+        </div>
+    </div>
+
+    <footer>
+        <!-- Ваш стандартний футер -->
+    </footer>
+
+    <script src="search.js"></script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бібліотечний Всесвіт - Головна сторінка</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+    background: #35424a;
+    color: #ffffff;
+    padding-top: 30px;
+    min-height: 70px;
+    border-bottom: #e8491d 3px solid;
+    display: flex;
+    align-items: center;
+}
+
+header li {
+    display: inline-block;
+    padding: 0 10px;
+}
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        header a:hover {
+            color: #cccccc;
+            font-weight: bold;
+        }
+        .welcome {
+            background: #35424a;
+            color: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .features {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .feature-card {
+            background: #ffffff;
+            padding: 20px;
+            width: 30%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-card h3 {
+            color: #e8491d;
+        }
+        .feature-card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #e8491d;
+            text-decoration: none;
+        }
+        .feature-card a:hover {
+            text-decoration: underline;
+        }
+        .book-section {
+            background: #ffffff;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .book-list {
+            display: flex;
+            overflow-x: auto;
+            padding: 10px 0;
+        }
+        .book-item {
+            margin-right: 20px;
+            text-align: center;
+        }
+        .book-item img {
+            width: 120px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        footer {
+            background: #35424a;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Бібліотечний</span> Всесвіт</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">Головна</a></li>
+                    <li><a href="library.html">Моя бібліотека</a></li>
+                    <li><a href="compas.html">Літературний компас</a></li>
+                    <li><a href="compare.html">Порівняння колекцій</a></li>
+                    <li><a href="search.html">Пошук книг</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section class="welcome">
+            <h2>Вітаємо у Бібліотечному Всесвіті, [Ім'я користувача]!</h2>
+            <p>Досліджуйте нові світи літератури, керуйте своєю колекцією та відкривайте для себе нові книги.</p>
+        </section>
+        
+        <section class="features">
+            <div class="feature-card">
+                <h3>Книга дня</h3>
+                <p>Щодня нова рекомендована книга для розширення вашого літературного горизонту.</p>
+                <a href="#">Переглянути &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3>Читацький виклик</h3>
+                <p>Приєднуйтесь до щомісячного читацького виклику та відкривайте нові жанри.</p>
+                <a href="#">Долучитися &rarr;</a>
+            </div>
+            <div class="feature-card">
+                <h3>Статистика читання</h3>
+                <p>Відстежуйте свій прогрес, встановлюйте цілі та аналізуйте свої читацькі звички.</p>
+                <a href="#">Переглянути статистику &rarr;</a>
+            </div>
+        </section>
+
+        <section class="book-section">
+            <h3>Останні додані книги</h3>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Книга 1">
+                    <p>Назва книги 1</p>
+                </div>
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Книга 2">
+                    <p>Назва книги 2</p>
+                </div>
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Книга 3">
+                    <p>Назва книги 3</p>
+                </div>
+                <!-- Додайте більше книг за потреби -->
+            </div>
+        </section>
+
+        <section class="book-section">
+            <h3>Рекомендовані для вас</h3>
+            <div class="book-list">
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Рекомендована книга 1">
+                    <p>Рекомендована книга 1</p>
+                </div>
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Рекомендована книга 2">
+                    <p>Рекомендована книга 2</p>
+                </div>
+                <div class="book-item">
+                    <img src="/api/placeholder/120/180" alt="Рекомендована книга 3">
+                    <p>Рекомендована книга 3</p>
+                </div>
+                <!-- Додайте більше рекомендованих книг за потреби -->
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Бібліотечний Всесвіт. Всі права захищені.</p>
+        <nav>
+            <ul>
+                <li><a href="#">Про нас</a></li>
+                <li><a href="#">Контакти</a></li>
+                <li><a href="#">Допомога</a></li>
+            </ul>
+        </nav>
+    </footer>
+</body>
+</html>

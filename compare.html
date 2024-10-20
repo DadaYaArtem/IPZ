@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Порівняння колекцій - Бібліотечний Всесвіт</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Бібліотечний</span> Всесвіт</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Головна</a></li>
+                    <li><a href="library.html">Моя бібліотека</a></li>
+                    <li><a href="compas.html">Літературний компас</a></li>
+                    <li class="current"><a href="compare.html">Порівняння колекцій</a></li>
+                    <li><a href="search.html">Пошук книг</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="collection-comparison">
+            <h2>Соціальне порівняння колекцій</h2>
+            <div id="comparison-stats"></div>
+            <div class="collections-container">
+                <div class="user-collection">
+                    <h3>Ваша колекція</h3>
+                    <ul id="your-books"></ul>
+                </div>
+                <div class="other-collection">
+                    <h3>Колекція іншого користувача</h3>
+                    <select id="other-user-select">
+                        <option value="">Виберіть користувача</option>
+                        <option value="user1">Користувач 1</option>
+                        <option value="user2">Користувач 2</option>
+                        <option value="user3">Користувач 3</option>
+                    </select>
+                    <ul id="other-books"></ul>
+                </div>
+            </div>
+            <div id="common-books">
+                <h3>Спільні книги</h3>
+                <ul id="common-books-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2024 Бібліотечний Всесвіт. Всі права захищені.</p>
+    </footer>
+
+    <script src="compare.js"></script>
+</body>
+</html>
